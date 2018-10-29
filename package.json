@@ -1,0 +1,47 @@
+{
+  "name": "slack-zomato-daily-menu",
+  "description": "Online middleware for serving Zomato daily into Slack.",
+  "version": "1.0.0",
+  "repository": "https://github.com/mchsk/slack-zomato-daily-menu",
+  "bugs": "https://github.com/mchsk/slack-zomato-daily-menu/issues",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "fs-promise": "^2.0.3",
+    "koa": "^2.2.0",
+    "koa-basic-auth": "^2.0.0",
+    "koa-body": "^2.0.1",
+    "koa-compose": "^4.0.0",
+    "koa-csrf": "^3.0.6",
+    "koa-logger": "^3.0.0",
+    "koa-router": "^7.2.0",
+    "koa-session": "^5.0.0",
+    "koa-static": "^3.0.0",
+    "koa-views": "^6.0.2",
+    "request": "^2.88.0",
+    "slack-node": "^0.1.8",
+    "streaming-json-stringify": "^3.1.0",
+    "sync-request": "^6.0.0",
+    "then-request": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "eslint-config-koa": "^2.0.2",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^3.3.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "mocha": "^5.0.0",
+    "should": "^3.3.2",
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "DEBUG=app nodemon app.js",
+    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+    "heroku-postbuild": "echo This runs afterwards.",
+    "test": "mocha"
+  },
+  "engines": {
+    "node": ">= 8.12.0"
+  },
+  "license": "MIT"
+}
