@@ -1,7 +1,7 @@
 # Slack/Zomato Daily menu
 Daily menu for Slack.<br>
 ![❤️](https://raw.githubusercontent.com/mchsk/slack-zomato-daily-menu/assets/images/slack-zomato-heroku.png)
-This is an effort to make use of combination of:
+This is an effort to make use of the following:
 - zomato data
 - slack collaboration tool
 - heroku platform as a service
