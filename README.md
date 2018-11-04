@@ -7,7 +7,7 @@ This is an effort to make use of combination of:
 - heroku platform as a service
 
 ### How to use it
-Just fire your curl command that represents the following pattern. It is pretty self-explanatory.
+Just fire your [curl](https://tecadmin.net/post-json-data-with-curl-command/) command that represents the following pattern. It is pretty self-explanatory.
 ```
 POST http://slack-zomato-daily-menu.herokuapp.com/api/send
 
@@ -23,8 +23,8 @@ POST http://slack-zomato-daily-menu.herokuapp.com/api/send
 		}
 		],
 	"slack_token": "TOKEN",       // the ending of Webhook URL - looks like XXXXX/YYYYY/ZZZZZZ
-	"slack_channel": "@marek",    // optional: channel/username where to send to
-	"slack_username": "LunchBot", // optional: name of the bot
+	"slack_channel": "#lunchtime",    // optional: channel/username where to send to
+	"slack_username": "Fooood!", // optional: name of the bot
 	"slack_emoji": ":slack:"      // optional: represents the slack emoji of the bot
 }
 ```
