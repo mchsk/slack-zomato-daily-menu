@@ -49,7 +49,7 @@ async function processSending(ctx) {
     let slackMessage = ''
 
     if (menus.length == 0) {
-      slackMessage = `\n ${slackIcon}  *${name}* _No daily menus available._\n\n ${url}`
+      slackMessage = `\n ${slackIcon}  *${name}* _Sorry, no daily menu today._\n${restaurantData.url}\n`
     } else {
       slackMessage = `\n ${slackIcon}  *${name}*\n\n`
 
@@ -64,6 +64,10 @@ async function processSending(ctx) {
       }
     }
 
+    console.info(slackChannel)
+    console.info(slackUsername)
+    console.info(slackEmoji)
+    
     slack.webhook({
       channel: slackChannel,
       username: slackUsername,
@@ -74,8 +78,8 @@ async function processSending(ctx) {
     })
   }
 
-  this.body = {
-    success: true
+  ctx.body = {
+    result: "ok"
   }
 
 }
@@ -102,12 +106,17 @@ async function getRestaurantData(zomatoId) {
     }
   )
   const dailyMenu = JSON.parse(dailyMenuResponse.getBody('UTF-8'))
-
+  
+  let menus = [] // empty menus in case there is nothing provided for today
+  if (dailyMenu.daily_menus[0]) {
+    menus = dailyMenu.daily_menus[0].daily_menu.dishes
+  }
   return {
     name: restaurant.name,
     url: restaurant.url,
-    menus: dailyMenu.daily_menus[0].daily_menu.dishes
+    menus
   }
 }
 
 app.listen(config.HTTP_PORT)
+console.info(`Listening on port ${config.HTTP_PORT}. Call me 📞!`)
