@@ -22,10 +22,10 @@ POST http://slack-zomato-daily-menu.herokuapp.com/api/send
 			"slack_icon": ":jeba:"
 		}
 		],
-	"slack_token": "TOKEN",       // the ending of Webhook URL - looks like XXXXX/YYYYY/ZZZZZZ
-	"slack_channel": "#lunchtime",    // optional: channel/username where to send to
-	"slack_username": "Fooood!", // optional: name of the bot
-	"slack_emoji": ":slack:"      // optional: represents the slack emoji of the bot
+	"slack_token": "TOKEN",          // the ending of Webhook URL - looks like XXXXX/YYYYY/ZZZZZZ
+	"slack_channel": "#lunchtime",   // optional: channel/username where to send to
+	"slack_username": "Fooood!",     // optional: name of the bot
+	"slack_emoji": ":slack:"         // optional: represents the slack emoji of the bot
 }
 ```
 
