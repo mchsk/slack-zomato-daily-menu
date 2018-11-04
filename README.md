@@ -14,8 +14,8 @@ POST http://slack-zomato-daily-menu.herokuapp.com/api/send
 {
 	"restaurants": [
 		{
-			"zomato_id": "16506717",
-			"slack_icon": ":dno:"
+			"zomato_id": "16506717",  // zomato restaurant id
+			"slack_icon": ":dno:"     // slack emoji representation of the restaurant
 		},
 		{
 			"zomato_id": "16506578",
