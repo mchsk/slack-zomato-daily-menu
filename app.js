@@ -26,9 +26,13 @@ async function processSending(ctx) {
 
   const restaurants = body.restaurants
   const slackToken = body.slack_token
-  const slackChannel = '#mittag_essen'
-  const slackEmoji = ':donald:'
-  const slackUsername = 'Eating great again?'
+
+  // bot customization
+  const slackChannel = body.slack_channel || '#mittag_essen' // haha ;)
+  const slackUsername = body.slack_username || 'Eating great again?' // seriously.
+  const slackEmoji = body.slack_emoji || ':donald:' // i mean. nobody else.
+  
+
   slack = new Slack()
   slack.setWebhook(`https://hooks.slack.com/services/${slackToken}`)
 
@@ -87,7 +91,6 @@ async function getRestaurantData(zomatoId) {
     }
   )
   const restaurant = JSON.parse(restaurantResponse.getBody('UTF-8'))
-  // console.log(restaurant)
 
   const dailyMenuResponse = await thenRequest('GET',
     `https://developers.zomato.com/api/v2.1/dailymenu?res_id=${zomatoId}`,
@@ -99,7 +102,6 @@ async function getRestaurantData(zomatoId) {
     }
   )
   const dailyMenu = JSON.parse(dailyMenuResponse.getBody('UTF-8'))
-  // console.log(dailyMenu)
 
   return {
     name: restaurant.name,
